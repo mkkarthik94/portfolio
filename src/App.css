@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.animate-navbar-down {
+  animation: moveDown 1s ease-in-out;
+  z-index: -1;
+}
+
+.animate-navbar-up {
+  animation: moveUp 1s ease-in-out;
+  z-index: -1;
+}
+
+@keyframes moveUp {
+  from {
+    transform: translateY(0rem); /* Start from the current position */
+  }
+  to {
+    transform: translateY(-18rem); /* Move up by 18rem */
+  }
+}
+
+
+@keyframes moveDown {
+from {
+  transform: translateY(-18rem);
+}
+to {
+  transform: translateY(0rem);
+}
+}
+
+.underline-animation {
+  position: relative;;
+}
+
+.underline-animation::after {
+  content: '';
+  position: absolute;
+  bottom: 8px;
+  left: 25%;
+  right: 0px;
+  width: 0;
+  height: 4.5px;
+  background-color: #f4d000; /* Yellow color */
+  transition: width 0.3s ease-in-out;
+}
+
+.underline-animation:hover::after,
+.underline-animation:focus::after {
+  width: 50%;
+  
+}
