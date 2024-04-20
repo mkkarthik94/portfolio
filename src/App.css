@@ -4,33 +4,37 @@
 
 
 
-.animate-navbar-down {
-  animation: moveDown 1s ease-in-out;
-  z-index: -1;
+.animate-navbar-down .menu-items{
+   display: block;
+  animation: moveDown 1s forwards;
 }
 
-.animate-navbar-up {
-  animation: moveUp 1s ease-in-out;
-  z-index: -1;
+.animate-navbar-up .menu-items{
+  display: block;
+  animation: moveUp 1s forwards;
 }
 
 @keyframes moveUp {
-  from {
-    transform: translateY(0rem); /* Start from the current position */
+    from {
+    opacity: 1;
+    transform: translateY(0rem);
   }
   to {
-    transform: translateY(-18rem); /* Move up by 18rem */
+    opacity: 0;
+    transform: translateY(-18rem);
   }
 }
 
 
 @keyframes moveDown {
 from {
-  transform: translateY(-18rem);
-}
-to {
-  transform: translateY(0rem);
-}
+    opacity: 0;
+    transform: translateY(-18rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0rem);
+  }
 }
 
 .underline-animation {
